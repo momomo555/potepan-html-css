@@ -1,0 +1,325 @@
+/*====================
+レスポンシブ対応のブレイクポイントとしては以下とする
+ - 1081px〜：ヘッダー横並び
+ - 768px〜1080px：ハンバーガーメニューに変更
+ - 〜767px：トップ画像を縦長用のものに変更
+====================*/
+
+body {
+    margin: 0px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding:20px 36px;
+  height: 80;
+}
+
+.contentLeft img {
+  height: 20px;
+}
+
+.contentLeft img:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.contentRight {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+.contentRight > ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+}
+
+.contentRight li::first-line{
+  font-size: 14px;
+}
+
+.contentRight li {
+  font-size: 10px;
+}
+
+.contentRight li:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.contentRight a {
+  text-decoration: none;
+  color: black;
+}
+
+.contentRight > button {
+  background-color: #f79214;
+  border-radius: 36px;
+  cursor: pointer;
+  border:none;
+  color: white;
+  height: 40px;
+  font-size: 12px;
+  padding: 0 20px;
+}
+
+.contentRight > button:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.humbergurMenu {
+  display: none
+}
+
+.top {
+  background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.topContents {
+  width: fit-content;
+}
+
+.topBody {
+  margin:0 auto;
+  padding: 0 50px;
+  max-width: 1140px;
+}
+
+h1 {
+  font-size: 38px;
+  margin: 0 0 15px;
+}
+
+.graphs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.jobOfferRate {
+  width: 27.5%;
+}
+
+.webEngineer {
+  width: 40%;
+}
+
+.cashBack {
+  width: 27.5%;
+}
+
+.buttons {
+  display: flex;
+  justify-content:space-between;
+}
+
+.buttons button {
+    border-radius: 36px;
+    cursor: pointer;
+    height: 64px;
+    font-size:16px;
+}
+
+.freeCounseling {
+  background-color: #f79214;
+  border:none;
+  color: white;
+  width: 306px;
+}
+
+.freeCounseling:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.documentRequest {
+  background-color: white;
+  border:1px solid #e0e0e0;
+  width: 176px;
+}
+
+.documentRequest:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+h1 {
+  text-align: center;
+}
+
+.note {
+  margin: 70px 0 0;
+}
+
+.note > p {
+  margin:0;
+  font-size: 12px;
+  color: #a2a2a4;
+}
+
+.aboutPotepanCamp {
+  background-color: #f79214;
+  padding:44px 0;
+}
+
+.aboutBody {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 0 50px;
+}
+
+.video {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.aboutDescription {
+  color: white;
+  padding-left: 32px;
+}
+
+h2 {
+  font-size: 38px;
+  word-wrap: break-word;
+}
+
+.aboutDescription > p {
+  font-size: 16px;
+}
+
+.aboutDescription > a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* 768px〜1080px：ハンバーガーメニューに変更
+------------------------------ */
+@media screen and (max-width:1080px) {
+  
+  header {
+    background-color: white;
+    position: fixed;
+    top:0;
+  }
+  
+  .contentRight {
+    display: none;
+  }
+  
+  .humbergurMenu {
+    display: block;
+  }
+  
+  .menuButton{
+    width: 30px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menuButton span,
+  .menuButton span::before,
+  .menuButton span::after
+  {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 30px;
+    border-radius: 10px;
+    background-color:#333;
+  }
+  
+  .menuButton span::before {
+    position: absolute;
+    top: 20px;
+  }
+  
+  .menuButton span::after {
+    position: absolute;
+    bottom: 25px;
+  }
+  
+  #menuButtonCheck:checked ~ .menuButton span {
+    background-color: rgba(255,255,255,0);
+  }
+  
+  #menuButtonCheck:checked ~ .menuButton span::before {
+    top:31px;
+    transform: rotate(45deg);
+  }
+  
+  #menuButtonCheck:checked ~ .menuButton span::after {
+    top:31px;
+    transform: rotate(-45deg);
+  }
+  
+  #menuButtonCheck {
+    display: none;
+  }
+  
+  .top {
+    margin-top: 66px;
+  }
+  
+  .aboutBody {
+    display: block;
+  }
+  
+  .aboutBody video {
+    width: 100%;
+  }
+  
+  .aboutDescription {
+    padding-left: 0;
+  }
+}
+
+/* 〜767px：トップ画像を縦長用のものに変更
+------------------------------ */
+@media screen and (max-width: 767px) {
+  
+  .top {
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero-sp.jpg.webp);
+    padding-top: 600px;
+  }
+  
+  .topContents {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size:25px;
+  }
+  
+  .freeCounseling {
+    width: 100%;
+  }
+  
+  .documentRequest {
+    display: none;
+  }
+  
+  .note {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  
+}
